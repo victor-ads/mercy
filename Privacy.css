@@ -1,0 +1,45 @@
+/* Center the section content */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    text-align: center; /* Center text content */
+    padding: 20px; /* Add padding for smaller screens */
+  }
+  
+  /* Style for the privacy policy section */
+  #privacy-policy {
+    max-width: 800px; /* Increase width for better readability */
+    width: 100%; /* Make sure it takes full width on small screens */
+  }
+  
+  /* Responsive typography */
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive heading */
+    margin-bottom: 1.5rem;
+  }
+  
+  p, ul {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive paragraph text */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 1rem;
+  }
+  
+  /* Style for list items */
+  ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Indent list items */
+  }
+  
+  /* Mobile specific adjustments */
+  @media (max-width: 600px) {
+    .section {
+      padding: 10px; /* Reduce padding on small screens */
+    }
+  
+    #privacy-policy {
+      max-width: 100%; /* Full width on small screens */
+    }
+  }
+  

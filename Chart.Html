@@ -1,0 +1,205 @@
+/* <div class="container">
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <h2>Book Us</h2>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Enter your name"
+                required
+                oninput="document.getElementById('warning').textContent = /^[A-Za-z\s]*$/.test(this.value) ? '' : 'Name should only contain letters and spaces';"
+            >
+            <div id="warning" class="warning"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                required
+                placeholder="Enter your phone number"
+                oninput="document.getElementById('phone-warning').textContent = /^[\d\s\-\+\(\)]*$/.test(this.value) ? '' : 'Phone number should only contain digits, spaces, and common phone number symbols (e.g., -, +, ( )).';"
+            >
+            <div id="phone-warning" class="warning"></div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                placeholder="Enter your email"
+                oninput="document.getElementById('email-warning').textContent = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value) ? '' : 'Invalid email format. Please enter a valid email address.';"
+            >
+            <div id="email-warning" class="warning"></div>
+        </div>
+        <div class="form-group">
+            <label for="project-type">Type of Project:</label>
+            <select id="project-type" name="project-type" required>
+                <option value="">Select a project type</option>
+                
+                <!-- Residential Projects -->
+                <option value="Single-Family Homes">Single-Family Homes</option>
+                <option value="Multi-Family Units">Multi-Family Units</option>
+                <option value="Townhouses">Townhouses</option>
+                
+                <!-- Commercial Projects -->
+                <option value="Office Buildings">Office Buildings</option>
+                <option value="Retail Buildings">Retail Buildings</option>
+                <option value="Hotels and Resorts">Hotels and Resorts</option>
+                
+                <!-- Industrial Projects -->
+                <option value="Factories">Factories</option>
+                <option value="Warehouses">Warehouses</option>
+                <option value="Power Plants">Power Plants</option>
+                
+                <!-- Institutional Projects -->
+                <option value="Educational Buildings">Educational Buildings</option>
+                <option value="Healthcare Facilities">Healthcare Facilities</option>
+                <option value="Government Buildings">Government Buildings</option>
+                
+                <!-- Infrastructure Projects -->
+                <option value="Transportation">Transportation</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Public Spaces">Public Spaces</option>
+                
+                <!-- Mixed-Use Projects -->
+                <option value="Multi-Use Developments">Multi-Use Developments</option>
+                
+                <!-- Specialized Projects -->
+                <option value="High-Rise Buildings">High-Rise Buildings</option>
+                <option value="Cultural Facilities">Cultural Facilities</option>
+                <option value="Historical Restoration">Historical Restoration</option>
+                
+                <!-- Sustainable and Green Projects -->
+                <option value="LEED Certified Buildings">LEED Certified Buildings</option>
+                <option value="Passive House Projects">Passive House Projects</option>
+                
+                <!-- Recreational Projects -->
+                <option value="Sports Facilities">Sports Facilities</option>
+                <option value="Aquatic Facilities">Aquatic Facilities</option>
+                
+                <!-- Renovation and Remodeling Projects -->
+                <option value="Residential Renovations">Residential Renovations</option>
+                <option value="Commercial Renovations">Commercial Renovations</option>
+            </select>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="location">Location of Your Project:</label>
+            <select id="location" name="location" required>
+                <option value="">Select a location</option>
+                
+                <!-- Africa -->
+                <option value="Cairo, Egypt">Cairo, Egypt</option>
+                <option value="Johannesburg, South Africa">Johannesburg, South Africa</option>
+                <option value="Nairobi, Kenya">Nairobi, Kenya</option>
+                <option value="Lagos, Nigeria">Lagos, Nigeria</option>
+                <option value="Cape Town, South Africa">Cape Town, South Africa</option>
+                
+                <!-- Asia -->
+                <option value="Beijing, China">Beijing, China</option>
+                <option value="Tokyo, Japan">Tokyo, Japan</option>
+                <option value="Seoul, South Korea">Seoul, South Korea</option>
+                <option value="Mumbai, India">Mumbai, India</option>
+                <option value="Dubai, UAE">Dubai, UAE</option>
+                
+                <!-- Europe -->
+                <option value="Paris, France">Paris, France</option>
+                <option value="London, UK">London, UK</option>
+                <option value="Berlin, Germany">Berlin, Germany</option>
+                <option value="Rome, Italy">Rome, Italy</option>
+                <option value="Madrid, Spain">Madrid, Spain</option>
+                
+                <!-- North America -->
+                <option value="New York City, USA">New York City, USA</option>
+                <option value="Toronto, Canada">Toronto, Canada</option>
+                <option value="Mexico City, Mexico">Mexico City, Mexico</option>
+                <option value="Los Angeles, USA">Los Angeles, USA</option>
+                <option value="Vancouver, Canada">Vancouver, Canada</option>
+                
+                <!-- Oceania -->
+                <option value="Sydney, Australia">Sydney, Australia</option>
+                <option value="Auckland, New Zealand">Auckland, New Zealand</option>
+                <option value="Melbourne, Australia">Melbourne, Australia</option>
+                <option value="Wellington, New Zealand">Wellington, New Zealand</option>
+                <option value="Suva, Fiji">Suva, Fiji</option>
+                
+                <!-- South America -->
+                <option value="São Paulo, Brazil">São Paulo, Brazil</option>
+                <option value="Buenos Aires, Argentina">Buenos Aires, Argentina</option>
+                <option value="Rio de Janeiro, Brazil">Rio de Janeiro, Brazil</option>
+                <option value="Lima, Peru">Lima, Peru</option>
+                <option value="Bogotá, Colombia">Bogotá, Colombia</option>
+                
+                <!-- Additional Locations -->
+                <option value="Istanbul, Turkey">Istanbul, Turkey</option>
+                <option value="Malta">Malta</option>
+                <option value="Greenland">Greenland</option>
+                <option value="Svalbard, Norway">Svalbard, Norway</option>
+            </select>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="stage">Stage of Project:</label>
+            <select id="stage" name="stage" required>
+                <option value="">Select a stage</option>
+                <option value="Pre-Construction">Pre-Construction</option>
+                <option value="Site Preparation">Site Preparation</option>
+                <option value="Foundation">Foundation</option>
+                <option value="Superstructure">Superstructure</option>
+                <option value="Building Envelope">Building Envelope</option>
+                <option value="Interior Construction">Interior Construction</option>
+                <option value="Finishes">Finishes</option>
+                <option value="Inspection and Testing">Inspection and Testing</option>
+                <option value="Final Touches">Final Touches</option>
+                <option value="Occupancy and Handover">Occupancy and Handover</option>
+                <option value="Post-Construction">Post-Construction</option>
+            </select>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="landmark">Closest Landmark to Your Project:</label>
+            <input type="text" id="landmark" name="landmark" required>
+        </div>
+        <div class="form-group">
+            <label for="local-govt">Local Government:</label>
+            <input type="text" id="local-govt" name="local-govt" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+        </div>
+        <div class="form-group">
+            <label for="street">Street:</label>
+            <input type="text" id="street" name="street" required>
+        </div>
+        <div class="form-group">
+            <label for="requirements">What do you want us to do for you:</label>
+            <textarea id="requirements" name="requirements" rows="5" required></textarea>
+        </div>
+
+        <!-- New fields for engineer's details -->
+        <div class="form-group">
+            <label for="engineer-name">Engineer’s Name:</label>
+            <input type="text" id="engineer-name" name="engineer-name" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price (in Naira):</label>
+            <input type="number" id="price" name="price" required>
+        </div>
+
+        <div class="form-group">
+            <button type="button" id="proceed-to-payment">Proceed to Payment</button>
+        </div>
+    </section>
+</div>/
